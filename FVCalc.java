@@ -14,5 +14,5 @@ public class FVCalc {
 		//System.out.println("new rate "+nr);
 		double futureValue = currentValue * Math.pow(nr, n);
 		System.out.println(currentValue + "$ saved at " + rate + "% will yield " + (int) futureValue + " $");
-	}
+	}// Computes the future value of a saving investment.
 }
