@@ -9,25 +9,27 @@ public class TimeFormat {
 		// It concatenates the empty string "" with the leftmost hour-digit. 
 		// It then concatenates the resulting string with the rightmost hour-digit,
 		// and then uses parseInt to cast the resulting string as an int.
-	//	//int hours = Integer.parseInt("" + args[0].charAt(0) + args[0].charAt(1));
+		//String time = args[0];
+		int hours = Integer.parseInt("" + args[0].charAt(0) + args[0].charAt(1));
 		// Does the same with the minutes part of the input.
-	//	//int minutes = Integer.parseInt("" + args[0].charAt(3) + args[0].charAt(4));
+		int minutes = Integer.parseInt("" + args[0].charAt(3) + args[0].charAt(4));
 		// Replace this comment with the rest of your code
-		int h = Integer.parseInt(args[0]);
-		int m = Integer.parseInt(args[1]);
-		System.out.println(h + " : " + m);
-		if (h >= 00 && h <= 11 && m <= 59) {
-			System.out.println(h + " : " + m + " AM");
+		if (hours >= 00 && hours <= 11 && minutes <= 59) {
+			System.out.println(hours + ":" + minutes + " AM");
 		}
-		else if (h >= 12 && h <= 23 && m <= 59){
-			if (h == 12) {
-				System.out.println(h + " : " + m + " PM");
+		else if (hours >= 12 && hours <= 23 && minutes <= 59){
+			if (hours == 12 && minutes >= 10) {
+				System.out.println(hours + ":" + minutes + " PM");
+			}
+			else if (hours == 12 && minutes < 10) {
+					System.out.println(hours+":0"+minutes);
 				}
 			for (int i = 1; i < 12; i++) {
-				if (12 + i == h) {
-					System.out.println(i + " : " + m + " PM");
+				if ((12 + i == hours) && (minutes >= 10)) {
+					System.out.println(i + ":" + minutes + " PM");
 				}
-				
+				else if ((12 + i == hours) && (minutes < 10))
+					System.out.println(i + ":0" + minutes + " PM");
 			}
 		}
 	}
