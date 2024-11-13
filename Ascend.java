@@ -30,7 +30,7 @@ public class Ascend {
 		if (Math.max(nums[0], nums[1]) == Math.min(mid, nums[2])) {
 			b = Math.min(mid, nums[2]);
 		}
-
+//maybe loop will solve the mid number
 		if (mid != b) {
 			if ((mid == a || mid == c) && (b != a && b != c)) {
 				b = b;
